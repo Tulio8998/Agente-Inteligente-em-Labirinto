@@ -1,0 +1,7 @@
+--- BUSCA ONLINE ---
+Labirinto,Algoritmo,Sucesso,Passos_Reais,Custo_Otimo,Celulas_Reveladas,Celulas_Revisitadas,Replanejamentos,Razao_Competitiva
+43x23,Replanning A*,Sim,262,262,636,0,262,1.0
+101x101,Replanning A*,Sim,854,854,2092,0,854,1.0
+21x11,Replanning A*,Sim,64,64,162,0,64,1.0
+51x21,Replanning A*,Sim,112,112,291,0,112,1.0
+15x15,Replanning A*,Sim,58,58,148,0,58,1.0
