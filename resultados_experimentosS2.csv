@@ -1,7 +1,12 @@
---- BUSCA ONLINE ---
-Labirinto,Algoritmo,Sucesso,Passos_Reais,Custo_Otimo,Celulas_Reveladas,Celulas_Revisitadas,Replanejamentos,Razao_Competitiva
-43x23,Replanning A*,Sim,262,262,636,0,262,1.0
-101x101,Replanning A*,Sim,854,854,2092,0,854,1.0
-21x11,Replanning A*,Sim,64,64,162,0,64,1.0
-51x21,Replanning A*,Sim,112,112,291,0,112,1.0
-15x15,Replanning A*,Sim,58,58,148,0,58,1.0
+-- BUSCA LOCAL COM PONTOS DE COLETA ---
+Labirinto,Algoritmo,Melhor_Custo,Pior_Custo,Custo_Medio,Tempo_Medio_s,Iteracoes_Medias,Taxa_Sucesso_Pct
+42_23_Coleta.txt,Hill-Climbing,320.0,320.0,320.0,0.01352,3.7,100.0
+42_23_Coleta.txt,Simulated Annealing,320.0,320.0,320.0,0.01425,316.0,100.0
+101_101_Coleta.txt,Hill-Climbing,4892.0,6592.0,5371.9,0.75077,8.3,26.7
+101_101_Coleta.txt,Simulated Annealing,4892.0,7082.0,5568.3,0.72859,316.0,23.3
+mansion_grid_21_11_Coleta.txt,Hill-Climbing,87.0,87.0,87.0,0.00154,2.2,100.0
+mansion_grid_21_11_Coleta.txt,Simulated Annealing,87.0,87.0,87.0,0.00229,316.0,100.0
+open_battlefield_35_15_Coleta.txt,Hill-Climbing,70.0,90.0,75.0,0.00794,3.4,70.0
+open_battlefield_35_15_Coleta.txt,Simulated Annealing,70.0,82.0,71.0,0.00881,316.0,90.0
+u_trap_21_9_Coleta.txt,Hill-Climbing,46.0,46.0,46.0,0.00163,1.7,100.0
+u_trap_21_9_Coleta.txt,Simulated Annealing,46.0,46.0,46.0,0.00280,316.0,100.0
