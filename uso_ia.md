@@ -45,3 +45,32 @@ A IA foi responsável por sugerir a implementação das funções de visualizaç
 * **Correção manual das matrizes:** Refizemos a estrutura dos labirintos de teste (`u_trap_21_9.txt` e `mansion_grid_21_11.txt`), realinhando os caracteres `#` e garantindo um formato perfeitamente retangular no Bloco de Notas sem quebra automática de linha.
 * **Ajuste no fluxo do Menu (Célula 4):** Modificamos a estrutura condicional `if/else` para garantir que `plot_barras_metricas` fosse chamado apenas para testes individuais e `plot_linhas_comparativo` fosse chamado apenas para a lista de resultados da Opção 8.
 * **Instalação de dependências:** Tivemos que instalar manualmente o pacote `matplotlib` (`pip install matplotlib`) no ambiente virtual local para resolver o erro de compilação.
+
+## Semana 2 (Parte IV - Busca Online e Resolução de Conflitos)
+
+### 1. Ferramentas utilizadas
+
+* **Google Gemini**: Utilizado para implementação da arquitetura da Busca Online (Agente vs Simulador Real), criação das métricas de busca online (Células Reveladas, Replanejamentos), mesclagem avançada de código de Jupyter Notebook via script para resolução de conflitos de Git, e elucidação de dúvidas conceituais sobre estruturas de dados em grafos.
+
+### 2. Principais prompts utilizados
+
+* *"Preciso implementar a Parte IV, a Busca Online. O agente não tem o mapa e precisa explorar. Como separar isso em um Simulador e o conhecimento parcial do Agente?"*
+* *"Me sugira uma estratégia de Replanning A*. O agente tenta achar a saída assumindo que o desconhecido está livre e se replaneja quando bater numa parede."*
+* *"Como posso gerar gráficos comparando o número de passos reais da busca online com o custo ótimo se o agente conhecesse o mapa todo?"*
+* *"Por que tem um a mais do que o total de movimentos e de custo real?"*
+
+### 3. Trechos de código sugeridos por IA
+
+* **Lógica da Busca Online:** Arquitetura base (classes `MapaInterno`, `SimuladorReal`, `AgenteOnline`) e estratégia de `AgenteReplanningAStar`, ajudando a separar a visão restrita do agente do mapa global.
+* **Gráficos da Busca Online:** Funções `plot_online_metrics` e `plot_online_metrics_lines` em `matplotlib` para visualização comparativa de Passos Reais vs Custo Ótimo Offline.
+
+### 4. Erros cometidos pela IA e Sugestões Rejeitadas
+
+* **Falta de clareza nas métricas do vetor de caminho:** O código inicial da IA tratava o tamanho do vetor de posições gerado pela Busca Online sem a devida explicação da sua divergência para o custo de deslocamento. **Melhoria sugerida:** Apontei o erro lógico questionando "Por que tem um a mais do que o total de movimentos?", forçando a IA a refinar o output e a fundamentação teórica separando nós (len) de arestas (custo).
+* **Poluição do repositório com scripts de teste:** A IA gerou os arquivos `.py` extras (`test_plot.py` e `notebook_code.py`) além de imagens soltas (`test_plot.png`) durante a depuração que sujariam a branch principal do projeto. **Solução Rejeitada:** Rejeitei a ideia de manter esses arquivos auxiliares, instruindo a IA para deletá-los e não subi-los para o remoto.
+
+### 5. Como o grupo validou a solução
+
+* **Teste do Comportamento do Agente Online:** Executamos o labirinto no Jupyter Notebook e acompanhamos os *logs* iterativos para validar que o agente estava realmente parando ao encontrar paredes recém-descobertas (névoa de guerra) e que o gatilho de replanejamento rotas (novo A*) estava sendo acionado perfeitamente.
+* **Validação Teórica do Custo em Grafos:** Ao notarmos uma divergência no vetor de caminhos gerado pela Busca Online, questionamos a IA e validamos conceitualmente que o tamanho da lista sempre refletirá o número de *nós* (Custo + 1, pois inclui a raiz), enquanto a métrica reportada na tela é o número de *arestas* (custo real das transições físicas).
+* **Verificação Visual da Razão Competitiva:** Conferimos os gráficos gerados (`plot_online_metrics`) validando se as discrepâncias de passos (Online vs Offline) e o número de replanejamentos reportados nas métricas faziam sentido com o excesso de becos sem saída dos labirintos testados.
