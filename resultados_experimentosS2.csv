@@ -1,4 +1,3 @@
--- BUSCA LOCAL COM PONTOS DE COLETA ---
 Labirinto,Algoritmo,Melhor_Custo,Pior_Custo,Custo_Medio,Tempo_Medio_s,Iteracoes_Medias,Taxa_Sucesso_Pct
 42_23_Coleta.txt,Hill-Climbing,320.0,320.0,320.0,0.01352,3.7,100.0
 42_23_Coleta.txt,Simulated Annealing,320.0,320.0,320.0,0.01425,316.0,100.0
